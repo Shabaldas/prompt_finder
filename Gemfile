@@ -27,11 +27,15 @@ gem "stimulus-rails"
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem "cssbundling-rails"
 
+gem 'dotenv-rails', '~> 2.7'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
+
+gem 'foreman'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -53,7 +57,17 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'awesome_print'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'bullet'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "pry-rails"
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'rubocop', require: false
+  gem 'rubocop-performance'
+  gem "rubocop-faker"
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -71,5 +85,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'simplecov', require: false
   gem "webdrivers"
 end
