@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.2"
+ruby '3.2.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.7", ">= 7.0.7.2"
@@ -61,6 +61,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'bullet'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  gem 'database_cleaner'
   gem "pry-rails"
   gem 'rails-controller-testing'
   gem 'rspec-rails'
