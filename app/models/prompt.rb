@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class Prompt < ApplicationRecord
-  searchkick highlight: [:text]
+  searchkick highlight: [:text], special_characters: true
 
   def search_data
     {
-      text:
+      text: text
     }
   end
 end
