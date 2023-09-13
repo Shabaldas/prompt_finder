@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'csv'
 
 module DataProducer
@@ -18,7 +19,7 @@ module DataProducer
     private
 
     def utf8_file
-      @utf8_file ||= file.force_encoding("UTF-8")
+      @utf8_file ||= file.force_encoding('UTF-8')
     end
 
     def csv
