@@ -12,11 +12,12 @@
   </h1>
   <br/>
   <ul class="list-disc ml-6 hover:list-disc">
-    <% results.with_highlights(multiple: true).each do |result, highlights| %>
+    <% results.with_highlights(multiple: true).each do |_result, highlights| %>
       <li>
         <%= highlights[:text].join.html_safe %>
       </li>
       <br/>
+      <hr/>
     <% end %>
   </ul>
 

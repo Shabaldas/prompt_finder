@@ -21,7 +21,6 @@ export default class extends Controller {
       clearButton.classList.remove("hidden");
     } else {
       
-      console.log(this.clearButtonTarget);
       button.classList.remove("my-button");
       clearButton.classList.add("hidden");
       button.classList.add("disabled");
@@ -30,7 +29,6 @@ export default class extends Controller {
   }
 
   clearSearch() {
-    console.log('CLEAR')
     this.queryInputTarget.value = "";
     this.toggleButtonState();
   }

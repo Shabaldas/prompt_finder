@@ -2,18 +2,9 @@
 
 class SearchController < ApplicationController
   def search
-    @results = Prompt.search(sanitize_string_for_elasticsearch_string_query(params[:query]), highlight: { tag: '<strong>' })
-
+    @results = Prompt.search(params[:query], highlight: { tag: '<strong style="background-color: yellow">' })
     # collection = Prompt.pagy_search(params[:query], highlight: { tag: '<strong>' })
-
     # @pagy, @results = pagy_searchkick(collection, items: 10)
-
-    respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.update('results', partial: 'home/search_results',
-                                                            locals: { results: @results })
-      end
-    end
   end
 
   def sanitize_string_for_elasticsearch_string_query(str)

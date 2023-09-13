@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import DisablingController from "./disabling_controller"
 application.register("disabling", DisablingController)
+
+import SpinnerController from "./spinner_controller"
+application.register("spinner", SpinnerController)

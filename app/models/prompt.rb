@@ -2,12 +2,11 @@
 
 class Prompt < ApplicationRecord
   extend Pagy::Searchkick
-  
-  searchkick highlight: [:text]
+  searchkick highlight: [:text], special_characters: true
 
   def search_data
     {
-      text:
+      text: text
     }
   end
 end
