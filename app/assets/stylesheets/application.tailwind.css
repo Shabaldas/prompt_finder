@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.disabled {
+  pointer-events: none;
+  /* cursor: not-allowed; */
+  background-image: linear-gradient(135deg,
+    #eee 10%,
+    #fff 10%,
+    #fff 50%,
+    #eee 50%,
+    #eee 60%,
+    #fff 60%,
+    #fff 100%) !important;
+  background-size: 0.5em 0.5em;
+  color: #777777;
+  border-color: #cccccc;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-left: 8px;
+  border-width: 1px;
+}
+
+.my-button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.my-button:hover {
+  background-color: #2980b9;
+}

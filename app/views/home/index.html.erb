@@ -3,10 +3,13 @@
     <h1 class="text-4xl font-semibold mb-4" >
       <span class="ml-2 mb-8">Prompts searching</span>
     </h1>
-    <%= form_with(url: "/search", method: "post", local: false) do |form| %>
+    <%= form_with(url: "/search", method: "post", local: false, data: { controller: "disabling" }) do |form| %>
       <div class="flex items-center border rounded-lg p-4">
-        <%= form.text_field :query, placeholder: "Type to search something...", class: "w-full px-4 py-2 rounded-lg outline-none" %>
-        <%= form.submit "Search", class: "bg-blue-500 text-white px-4 py-2 rounded-lg ml-2" %>
+        <%= form.text_field :query, placeholder: "Type for search something...", class: "w-full px-4 py-2 rounded-lg outline-none", data: { target: "disabling.queryInput" } %>
+        <button type="button" class="hidden cursor-pointer" data-action="click->disabling#clearSearch" data-target="disabling.clearButton">
+          <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"/></svg>
+        </button>
+        <%= form.submit "Search", class: "disabled cursor-not-allowed", data: { target: "disabling.submitButton" } %>
       </div>
     <% end %>
     <div id="results">
