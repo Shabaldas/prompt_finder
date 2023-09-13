@@ -2,7 +2,8 @@
 
 class SearchController < ApplicationController
   def search
-    @results = Prompt.search(params[:query], highlight: { tag: '<strong>' })
+    @results = Prompt.search(params[:query], highlight: { tag: '<strong style="background-color: yellow">' }
+    )
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: turbo_stream.update('results', partial: 'home/search_results',
