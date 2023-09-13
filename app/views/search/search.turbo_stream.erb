@@ -1,0 +1,2 @@
+<%= turbo_stream.update('content_to_process_form', partial: 'shared/preview') %>
+<%= turbo_stream.update('results', partial: 'home/search_results', locals: { results: @results })%>
