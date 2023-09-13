@@ -1,5 +1,5 @@
 describe '/home/index', type: :request do
-  describe 'GET /home/idex' do
+  describe 'GET /home/index' do
     context 'when user not logged in' do
       it 'display home page' do
         get root_path
