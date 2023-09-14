@@ -2,6 +2,7 @@
 
 class SearchController < ApplicationController
   def search
-    @results = Prompt.search(params[:query], highlight: { tag: '<strong style="background-color: yellow">' })
+    collection = Prompt.pagy_search(params[:query], highlight: { tag: '<strong style="background-color: yellow">' })
+    @pagy, @results = pagy_searchkick(collection, items: 10)
   end
 end
