@@ -3,7 +3,7 @@
     <h1 class="text-4xl font-semibold mb-4" >
       <span class="ml-2 mb-8">Prompts searching</span>
     </h1>
-    <%= form_with(url: "/search", method: "post", local: false, data: { controller: "disabling spinner" }) do |form| %>
+    <%= form_with(url: "/search", method: "get", local: false, data: { turbo_stream: true, controller: "disabling spinner" }) do |form| %>
       <div class="flex items-center border rounded-lg p-4">
         <%= form.text_field :query, placeholder: "Type for search something...", class: "w-full px-4 py-2 rounded-lg outline-none", data: { target: "disabling.queryInput" } %>
         <button type="button" class="hidden cursor-pointer" data-action="click->disabling#clearSearch" data-target="disabling.clearButton">
