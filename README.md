@@ -15,6 +15,7 @@ FOR MACOS USER
   ```
 
   #### Docker Setup
+  Before you start please read this for docker [PR](https://github.com/Shabaldas/prompt_finder/pull/9)
   ```
     docker-compose build
   ```
@@ -22,6 +23,7 @@ FOR MACOS USER
   ```
     docker-compose up --build
   ```
+  
   ### Run the servers locally
   change your username and password for postgres user in ```.env``` file
   push 
