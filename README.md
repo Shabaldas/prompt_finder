@@ -38,3 +38,5 @@ FOR MACOS USER
   ```
   rails db:seed
   ```
+### Visit this project on Heroku
+  [Prompt Finder](https://prompt-search-55dc9c512838.herokuapp.com/)
