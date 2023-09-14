@@ -2,6 +2,12 @@ version: '3.9'
 
 services:
   # PostgreSQL service
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
   postgres:
     image: postgres:13
     environment:
@@ -26,7 +32,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: bundle exec rails s -p 3000
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     environment:
       DATABASE_HOST: localhost
       DATABASE_USERNAME: postgres

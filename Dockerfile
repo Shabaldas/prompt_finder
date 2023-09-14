@@ -21,10 +21,13 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
 # Copy the rest of the application code to the container
-COPY . .
+COPY bin/entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
 
 # Expose port 3000 for the Rails application
 EXPOSE 3000
 
 # Start the Rails server
-CMD ["rails", "server"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
