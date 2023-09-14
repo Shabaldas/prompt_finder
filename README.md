@@ -38,5 +38,10 @@ FOR MACOS USER
   ```
   rails db:seed
   ```
+### NOTE
+  In this search prompt I use elasticserach with searchkick rails gem.
+  Somehow I can't find specific data by this search engine. (I guess I need more time to discover it);
+  Emogi search also not supported, but I know how to solve it ```gem 'gemoji-parser'``` from searchkick official documentation.
+
 ### Visit this project on Heroku
   [Prompt Finder](https://prompt-search-55dc9c512838.herokuapp.com/)
