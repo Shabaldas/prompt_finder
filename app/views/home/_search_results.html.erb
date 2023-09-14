@@ -1,39 +1,42 @@
-<% if results.present? %>
-  <div>
-    <span class="text-sm font-semibold ml-2 pt-1">
-      <%= "#{results.total_count} result#{"s" if results.total_count > 1} found." %>
-    </span>
-  </div>
-  <h1 class="text-2xl font-semibold py-8 ml-2 inline-flex">
-    <%= image_tag('results.png', class: "h-10 w-10") %>
-    <span class="ml-2">
-      Search results for: "<%= params[:query] %>"
-    </span>
-  </h1>
-  <br/>
-  <ul class="list-disc ml-6 hover:list-disc">
-    <% results.with_highlights(multiple: true).each do |_result, highlights| %>
-      <li>
-        <%= highlights[:text].join.html_safe %>
-      </li>
-      <br/>
-      <hr/>
-    <% end %>
-  </ul>
-<% elsif params[:query].present? && results.empty? %>
-  <h2 class="text-2xl font-thin py-8 inline-flex">
-    <%= image_tag('no-results.png', class: "h-10 w-10") %>
-    <span class="ml-2 mb-4">
-      No results for: "<span class="font-semibold"><%= params[:query] %></span>"
-    </span>
-  </h2>
-  </br>
-  <ul class="list-disc ml-4">
-    <span class="font-bold">
-      Suggestions:
-    </span>
-    <li>Check your search for typos</li>
-    <li>Try more general keywords</li>
-    <li>Try differrent keywords</li>
-  </ul>
-<% end %>
+  <% if results.present? %>
+    <div>
+      <span class="text-sm font-semibold ml-2 pt-1">
+        <%= "#{results.total_count} result#{"s" if results.total_count > 1} found." %>
+      </span>
+    </div>
+    <h1 class="text-2xl font-semibold py-8 ml-2 inline-flex">
+      <%= image_tag('results.png', class: "h-10 w-10") %>
+      <span class="ml-2">
+        Search results for: "<%= params[:query] %>"
+      </span>
+    </h1>
+    <br/>
+    <ul class="list-disc ml-6 hover:list-disc">
+      <% results.with_highlights(multiple: true).each do |_result, highlights| %>
+        <li>
+          <%= highlights[:text].join.html_safe %>
+        </li>
+        <br/>
+        <hr/>
+      <% end %>
+    </ul>
+    
+    <%= paginate @results %>
+
+  <% elsif params[:query].present? && results.empty? %>
+    <h2 class="text-2xl font-thin py-8 inline-flex">
+      <%= image_tag('no-results.png', class: "h-10 w-10") %>
+      <span class="ml-2 mb-4">
+        No results for: "<span class="font-semibold"><%= params[:query] %></span>"
+      </span>
+    </h2>
+    </br>
+    <ul class="list-disc ml-4">
+      <span class="font-bold">
+        Suggestions:
+      </span>
+      <li>Check your search for typos</li>
+      <li>Try more general keywords</li>
+      <li>Try differrent keywords</li>
+    </ul>
+  <% end %>
