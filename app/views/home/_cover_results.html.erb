@@ -1,7 +1,0 @@
-<%= turbo_frame_tag "articles_list", src: articles_url(format: :turbo_stream, page: params[:page]), loading: "lazy" do %>
-  <div class="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles_placeholder">
-    <% 10.times do %>
-      <%= render "article_placeholder" %>
-    <% end %>
-  </div>
-<% end %>

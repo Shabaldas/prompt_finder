@@ -20,7 +20,11 @@
       <hr/>
     <% end %>
   </ul>
-
+  </br>
+  <div class="flex mt-12 items-center justify-center space-x-4 w-full">
+    <%== pagy_nav(@pagy) %>
+  </div>
+<p class="text-center mt-8 text-gray-500"><%== pagy_info @pagy %></p>
 <% elsif params[:query].present? && results.empty? %>
   <h2 class="text-2xl font-thin py-8 inline-flex">
     <%= image_tag('no-results.png', class: "h-10 w-10") %>
