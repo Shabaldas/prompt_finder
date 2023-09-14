@@ -1,24 +1,40 @@
-# README
+### Requirements
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+FOR MACOS USER
 
-Things you may want to cover:
+  better to use rbenv
+  - Ruby 3.2.2
+  - Bundler - `gem install bundler`
+  - Node.js 16.15.1 or higher - `brew install node@16`
+  - Yarn 1.22.19 or higher - `brew install yarn` or [Install Yarn](https://yarnpkg.com/en/docs/install)
+  - PostgreSQL - `brew install postgresql`
+  ### Setup
+  ```bash
+  git clone git@github.com:Shabaldas/prompt_finder.git
+  cd storm_esbuild
+  ```
 
-* Ruby version
+  #### Docker Setup
+  ```
+    docker-compose build
+  ```
+  or
+  ```
+    docker-compose up --build
+  ```
+  ### Run the servers locally
+  change your username and password for postgres user in ```.env``` file
+  push 
+  ```bash
+  bin/rails server -p 3000
+  yarn build:css --watch
+  yarn build --reload
+  ```
+  or
+  ```foreman start```
+  default port 3000
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### RUN SEED LOCAL
+  ```
+  rails db:seed
+  ```
